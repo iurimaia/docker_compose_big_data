@@ -1,6 +1,9 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
+<h3> Para executar o docker compose utilize o comando ' sudo docker-compose -f docker-compose.yml up '</h3>
+
+============================================================================
 
 <h1> Portainer </h1>
 Ferramenta web para gerenciar seu Docker. </br>
@@ -8,7 +11,6 @@ https://www.portainer.io/ </br>
 http://localhost:9000 </br>
 
 ============================================================================
-
 
 <h1> MongoDB </h1>
 Banco de dados de documentos (NoSql). </br>
