@@ -58,4 +58,8 @@ services:
     volumes:
       - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
 
-
+  jupyter_all_spark:
+    image: jupyter/all-spark-notebook
+    restart: always
+    ports:
+      - 8888:8888
