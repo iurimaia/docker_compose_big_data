@@ -1,9 +1,9 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
 <h1> Portainer </h1>
-Ferramenta web para gerenciar seu Docker.\n
-https://www.portainer.io/ \n
-http://localhost:9000 \n
+Ferramenta web para gerenciar seu Docker. </br>
+https://www.portainer.io/ </br>
+http://localhost:9000 </br>
 
 ============================================================================
 
