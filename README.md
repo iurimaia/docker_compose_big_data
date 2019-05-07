@@ -1,5 +1,7 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
+<h3> Substituir no arquivo docker-compose.yml o diretório local '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
+
 <h1> Portainer </h1>
 Ferramenta web para gerenciar seu Docker. </br>
 https://www.portainer.io/ </br>
