@@ -1,7 +1,9 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
-<h3> Para executar o docker compose utilize o comando ' sudo docker-compose -f docker-compose.yml up '</h3>
+<h3> Para executar o docker compose utilize o comando: </h3>
+    
+    sudo docker-compose -f docker-compose.yml up 
 
 ============================================================================
 
