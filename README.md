@@ -78,7 +78,7 @@ Hadoop cloudera quickstart </br>
 https://www.cloudera.com/documentation/enterprise/5-6-x/topics/quickstart_docker_container.html#cloudera_docker_container </br>
 <b>OBS: Caso sua máquina não tenha 8GB de RAM é melhor comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
 
-http://localhost:8889  # Hue </br>
+http://localhost:8889  # <b>Hue</b> </br>
 Usuário: cloudera </br>
 Senha: cloudera </br>
 
