@@ -60,7 +60,6 @@ Jupyter Notebook com todos as iinguagens para programar com spark. </br>
 Python 3 / Scala / R </br>
 https://github.com/jupyter/docker-stacks </br>
 http://localhost:8888 </br>
-Copiar o token no start do container. </br>
 
 ============================================================================
 
