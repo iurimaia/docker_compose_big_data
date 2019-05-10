@@ -59,6 +59,15 @@ Jupyter Notebook com todos as iinguagens para programar com spark. </br>
 Python 3 / Scala / R </br>
 https://github.com/jupyter/docker-stacks </br>
 http://localhost:8888 </br>
-Copiar o token no start do container. </br<
+Copiar o token no start do container. </br>
+
+============================================================================
+
+<h1> R-studio  </h1>
+R-studio para acesso web. </br>
+https://github.com/rocker-org/rocker-versioned/tree/master/rstudio </br>
+http://localhost:8788 </br>
+Usuário: rstudio </br>
+Senha: root </br>
 
 ============================================================================
