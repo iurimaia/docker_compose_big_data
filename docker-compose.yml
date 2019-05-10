@@ -10,7 +10,7 @@ services:
     command: -H unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/imaia_prest/Documents/Docker/docker_data/portainer:/data
+      - /home/iurimaia/Documents/docker_data/portainer:/data
     container_name: portainer
 
   mongo:
@@ -22,7 +22,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
-      - /home/imaia_prest/Documents/Docker/docker_data/mongo:/data/db
+      - /home/iurimaia/Documents/docker_data/mongo:/data/db
     container_name: mongodb
 
   mongo-express:
@@ -42,7 +42,7 @@ services:
       - 7474:7474
       - 7687:7687
     volumes:
-      - /home/imaia_prest/Documents/Docker/docker_data/neo4j:/data
+      - /home/iurimaia/Documents/docker_data/neo4j:/data
     container_name: neo4j
 
   redis:
@@ -52,7 +52,7 @@ services:
       - 6379:6379
     entrypoint: redis-server --appendonly yes
     volumes:
-      - /home/imaia_prest/Documents/Docker/docker_data/redis:/data
+      - /home/iurimaia/Documents/docker_data/redis:/data
     container_name: redis
 
   cassandra:
@@ -61,7 +61,7 @@ services:
     ports:
       - 7000:7000
     volumes:
-      - /home/imaia_prest/Documents/Docker/docker_data/cassandra:/var/lib/cassandra
+      - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
     container_name: cassandra
 
   jupyter_all_spark:
