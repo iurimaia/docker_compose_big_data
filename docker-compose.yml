@@ -70,3 +70,12 @@ services:
     ports:
       - 8888:8888
     container_name: jupyter_notebook
+
+  rstudio:
+    image: rocker/rstudio
+    restart: always
+    ports:
+      - 8788:8787
+    environment:
+      PASSWORD: root
+    container_name: rstudio
