@@ -76,7 +76,7 @@ Senha: root </br>
 <h1> Hadoop Cloudera  </h1>
 Hadoop cloudera quickstart </br>
 https://www.cloudera.com/documentation/enterprise/5-6-x/topics/quickstart_docker_container.html#cloudera_docker_container </br>
-<b>OBS: Caso sua máquina não tenha 8GB de RAM é melhor comentar todo o hadoop cloudera antes de rodar o docker compose. <br>
+<b>OBS: Caso sua máquina não tenha 8GB de RAM é melhor comentar todo o hadoop cloudera antes de rodar o docker compose.</br> <br>
 Gerenciar pelo Hue <br>
 porta: 8020  # HDFS </br> 
 porta: 8022  # SSH </br>
