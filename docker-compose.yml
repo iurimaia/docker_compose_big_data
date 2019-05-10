@@ -67,6 +67,7 @@ services:
  jupyter_all_spark:
    image: jupyter/all-spark-notebook
    restart: always
+   entrypoint: ["start.sh","jupyter","notebook","--NotebookApp.token=''"]
    ports:
      - 8888:8888
    container_name: jupyter_notebook
