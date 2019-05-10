@@ -3,7 +3,7 @@
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
 <h3> Para executar o docker compose utilize o comando: </h3>
     
-    sudo docker-compose -f docker-compose.yml up 
+    docker-compose -f docker-compose.yml up 
 
 ============================================================================
 
