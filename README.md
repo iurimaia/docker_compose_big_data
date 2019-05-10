@@ -1,9 +1,10 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
+<b>OBS: Caso sua máquina não tenha mais 8GB de RAM é recomendado comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
 <h3> Para executar o docker compose utilize o comando: </h3>
     
-    sudo docker-compose -f docker-compose.yml up 
+    docker-compose -f docker-compose.yml up 
 
 ============================================================================
 
@@ -59,6 +60,45 @@ Jupyter Notebook com todos as iinguagens para programar com spark. </br>
 Python 3 / Scala / R </br>
 https://github.com/jupyter/docker-stacks </br>
 http://localhost:8888 </br>
-Copiar o token no start do container. </br<
+Copiar o token no start do container. </br>
+
+============================================================================
+
+<h1> R-studio  </h1>
+R-studio para acesso web. </br>
+https://github.com/rocker-org/rocker-versioned/tree/master/rstudio </br>
+Porta original é 8787, porem foi trocada pois já estava em uso, para modificar basta substituir no arquivo 8788 por 8787 <br>
+http://localhost:8788 </br>
+Usuário: rstudio </br>
+Senha: root </br>
+
+============================================================================
+
+<h1> Hadoop Cloudera  </h1>
+Hadoop cloudera quickstart </br>
+https://www.cloudera.com/documentation/enterprise/5-6-x/topics/quickstart_docker_container.html#cloudera_docker_container </br>
+
+http://localhost:8889  # <b>Hue</b> </br>
+Usuário: cloudera </br>
+Senha: cloudera </br>
+
+porta: 8020  # HDFS </br> 
+porta: 8022  # SSH </br>
+http://localhost:7180  # Cloudera Manager </br>
+http://localhost:11000 # Oozie </br>
+http://localhost:50070 # HDFS Rest Namenode </br>
+http://localhost:50075 # HDFS Rest Datanode </br>
+porta: 2181  # Zookeeper </br>
+http://localhost:8088  # YARN Resource Manager </br>
+http://localhost:19888 # MapReduce Job History </br>
+porta: 50030 # MapReduce Job Tracker </br>
+http://localhost:8983  # Solr </br>
+porta: 16000 # Sqoop Metastore </br>
+http://localhost:8042  # YARN Node Manager </br>
+http://localhost:60010 # HBase Master </br>
+http://localhost:60030 # HBase Region </br>
+porta: 9090  # HBase Thrift </br>
+porta: 8080  # HBase Rest </br>
+porta: 7077  # Spark Master</br>
 
 ============================================================================
