@@ -13,69 +13,101 @@ services:
       - /home/iurimaia/Documents/docker_data/portainer:/data
     container_name: portainer
 
-  mongo:
-    image: mongo
-    restart: always
-    ports:
-      - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-    volumes:
-      - /home/iurimaia/Documents/docker_data/mongo:/data/db
-    container_name: mongodb
+ mongo:
+   image: mongo
+   restart: always
+   ports:
+     - 27017:27017
+   environment:
+     MONGO_INITDB_ROOT_USERNAME: root
+     MONGO_INITDB_ROOT_PASSWORD: root
+   volumes:
+     - /home/iurimaia/Documents/docker_data/mongo:/data/db
+   container_name: mongodb
 
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: root
-    container_name: mongo_express
+ mongo-express:
+   image: mongo-express
+   restart: always
+   ports:
+     - 8081:8081
+   environment:
+     ME_CONFIG_MONGODB_ADMINUSERNAME: root
+     ME_CONFIG_MONGODB_ADMINPASSWORD: root
+   container_name: mongo_express
 
-  neo4j:
-    image: neo4j
-    restart: always
-    ports:
-      - 7474:7474
-      - 7687:7687
-    volumes:
-      - /home/iurimaia/Documents/docker_data/neo4j:/data
-    container_name: neo4j
+ neo4j:
+   image: neo4j
+   restart: always
+   ports:
+     - 7474:7474
+     - 7687:7687
+   volumes:
+     - /home/iurimaia/Documents/docker_data/neo4j:/data
+   container_name: neo4j
 
-  redis:
-    image: redis
-    restart: always
-    ports:
-      - 6379:6379
-    entrypoint: redis-server --appendonly yes
-    volumes:
-      - /home/iurimaia/Documents/docker_data/redis:/data
-    container_name: redis
+ redis:
+   image: redis
+   restart: always
+   ports:
+     - 6379:6379
+   entrypoint: redis-server --appendonly yes
+   volumes:
+     - /home/iurimaia/Documents/docker_data/redis:/data
+   container_name: redis
 
-  cassandra:
-    image: cassandra
-    restart: always
-    ports:
-      - 7000:7000
-    volumes:
-      - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
-    container_name: cassandra
+ cassandra:
+   image: cassandra
+   restart: always
+   ports:
+     - 7000:7000
+   volumes:
+     - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
+   container_name: cassandra
 
-  jupyter_all_spark:
-    image: jupyter/all-spark-notebook
-    restart: always
-    ports:
-      - 8888:8888
-    container_name: jupyter_notebook
+ jupyter_all_spark:
+   image: jupyter/all-spark-notebook
+   restart: always
+   ports:
+     - 8888:8888
+   container_name: jupyter_notebook
 
-  rstudio:
-    image: rocker/rstudio
+ rstudio:
+   image: rocker/rstudio
+   restart: always
+   ports:
+     - 8788:8787
+   environment:
+     PASSWORD: root
+   container_name: rstudio
+
+  hadoop_cloudera:
+    image: cloudera/quickstart
+    privileged: true
+    hostname: quickstart.cloudera
     restart: always
+    command: /usr/bin/docker-quickstart
     ports:
-      - 8788:8787
-    environment:
-      PASSWORD: root
-    container_name: rstudio
+      - "8020:8020"   # HDFS 
+      - "8022:22"     # SSH
+      - "7180:7180"   # Cloudera Manager
+      - "8889:8888"   # Hue
+      - "11000:11000" # Oozie
+      - "50070:50070" # HDFS Rest Namenode
+      - "50075:50075" # HDFS Rest Datanode
+      - "2181:2181"   # Zookeeper
+      - "8088:8088"   # YARN Resource Manager
+      - "19888:19888" # MapReduce Job History
+      - "50030:50030" # MapReduce Job Tracker
+      - "8983:8983"   # Solr
+      - "16000:16000" # Sqoop Metastore
+      - "8042:8042"   # YARN Node Manager
+      - "60010:60010" # HBase Master
+      - "60030:60030" # HBase Region
+      - "9090:9090"   # HBase Thrift
+      - "8080:8080"   # HBase Rest
+      - "7077:7077"   # Spark Master
+    tty: true
+    stdin_open: true
+    volumes: 
+      - /home/iurimaia/Documents/docker_data/hadoop_cloudera:/media/shared_from_local
+    container_name: hadoop_cloudera
