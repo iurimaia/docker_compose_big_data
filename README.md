@@ -1,6 +1,7 @@
 # Docker compose para criação de containers úteis para criação de soluções Big Data
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
+<b>OBS: Caso sua máquina não tenha mais 8GB de RAM é recomendado comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
 <h3> Para executar o docker compose utilize o comando: </h3>
     
     docker-compose -f docker-compose.yml up 
@@ -76,7 +77,6 @@ Senha: root </br>
 <h1> Hadoop Cloudera  </h1>
 Hadoop cloudera quickstart </br>
 https://www.cloudera.com/documentation/enterprise/5-6-x/topics/quickstart_docker_container.html#cloudera_docker_container </br>
-<b>OBS: Caso sua máquina não tenha 8GB de RAM é melhor comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
 
 http://localhost:8889  # <b>Hue</b> </br>
 Usuário: cloudera </br>
