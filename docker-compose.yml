@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
 
+####################### PORTAINER ########################################################
   portainer:
     image: portainer/portainer
     restart: always
@@ -12,75 +13,91 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/iurimaia/Documents/docker_data/portainer:/data
     container_name: portainer
+####################### PORTAINER ########################################################
 
- mongo:
-   image: mongo
-   restart: always
-   ports:
-     - 27017:27017
-   environment:
-     MONGO_INITDB_ROOT_USERNAME: root
-     MONGO_INITDB_ROOT_PASSWORD: root
-   volumes:
-     - /home/iurimaia/Documents/docker_data/mongo:/data/db
-   container_name: mongodb
+####################### MONGO ############################################################
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - /home/iurimaia/Documents/docker_data/mongo:/data/db
+    container_name: mongodb
+####################### MONGO ############################################################
 
- mongo-express:
-   image: mongo-express
-   restart: always
-   ports:
-     - 8081:8081
-   environment:
-     ME_CONFIG_MONGODB_ADMINUSERNAME: root
-     ME_CONFIG_MONGODB_ADMINPASSWORD: root
-   container_name: mongo_express
+####################### MONGO EXPRESS ####################################################
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+    container_name: mongo_express
+####################### MONGO EXPRESS ####################################################
 
- neo4j:
-   image: neo4j
-   restart: always
-   ports:
-     - 7474:7474
-     - 7687:7687
-   volumes:
-     - /home/iurimaia/Documents/docker_data/neo4j:/data
-   container_name: neo4j
+####################### NEO4J ############################################################
+  neo4j:
+    image: neo4j
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - /home/iurimaia/Documents/docker_data/neo4j:/data
+    container_name: neo4j
+####################### NEO4J ############################################################
 
- redis:
-   image: redis
-   restart: always
-   ports:
-     - 6379:6379
-   entrypoint: redis-server --appendonly yes
-   volumes:
-     - /home/iurimaia/Documents/docker_data/redis:/data
-   container_name: redis
+####################### REDIS ############################################################
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    entrypoint: redis-server --appendonly yes
+    volumes:
+      - /home/iurimaia/Documents/docker_data/redis:/data
+    container_name: redis
+####################### REDIS ############################################################
 
- cassandra:
-   image: cassandra
-   restart: always
-   ports:
-     - 7000:7000
-   volumes:
-     - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
-   container_name: cassandra
+####################### CASSANDRA ########################################################
+  cassandra:
+    image: cassandra
+    restart: always
+    ports:
+      - 7000:7000
+    volumes:
+      - /home/iurimaia/Documents/docker_data/cassandra:/var/lib/cassandra
+    container_name: cassandra
+####################### CASSANDRA ########################################################
 
- jupyter_all_spark:
-   image: jupyter/all-spark-notebook
-   restart: always
-   entrypoint: ["start.sh","jupyter","notebook","--NotebookApp.token=''"]
-   ports:
-     - 8888:8888
-   container_name: jupyter_notebook
+####################### JUPYTER ALL SPARK ################################################
+  jupyter_all_spark:
+    image: jupyter/all-spark-notebook
+    restart: always
+    entrypoint: ["start.sh","jupyter","notebook","--NotebookApp.token=''"]
+    ports:
+      - 8888:8888
+    container_name: jupyter_notebook
+####################### JUPYTER ALL SPARK ################################################
 
- rstudio:
-   image: rocker/rstudio
-   restart: always
-   ports:
-     - 8788:8787
-   environment:
-     PASSWORD: root
-   container_name: rstudio
+####################### R STUDIO #########################################################
+  rstudio:
+    image: rocker/rstudio
+    restart: always
+    ports:
+      - 8788:8787
+    environment:
+      PASSWORD: root
+    container_name: rstudio
+####################### R STUDIO #########################################################
 
+####################### HADOOP CLOUDERA ##################################################
   hadoop_cloudera:
     image: cloudera/quickstart
     privileged: true
@@ -112,3 +129,15 @@ services:
     volumes: 
       - /home/iurimaia/Documents/docker_data/hadoop_cloudera:/media/shared_from_local
     container_name: hadoop_cloudera
+####################### HADOOP CLOUDERA ##################################################
+
+####################### APACHE AIRFLOW ###################################################
+  airflow:
+    image: puckel/docker-airflow
+    restart: always
+    ports:
+      - 8089:8080
+    volumes: 
+      - /home/iurimaia/Documents/docker_data/airflow:/media/shared_from_local
+    container_name: airflow
+####################### APACHE AIRFLOW ####################################################
