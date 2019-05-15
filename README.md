@@ -2,7 +2,7 @@
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
 <b>OBS: Caso sua máquina não tenha mais 8GB de RAM é recomendado comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
-<h3> Para executar todos os containers o docker compose utilize o comando: </h3>
+<h3> Para executar todos os containers de uma só vez no docker compose utilize o comando: </h3>
     
     docker-compose -f docker-compose.yml up 
 
