@@ -2,7 +2,7 @@
 
 <h3> Substituir no arquivo docker-compose.yml o diretório '/home/iurimaia/Documents/docker_data' pelo diretório local</h3>
 <b>OBS: Caso sua máquina não tenha mais 8GB de RAM é recomendado comentar todo o hadoop cloudera antes de rodar o docker compose.</b><br>
-<h3> Para executar o docker compose utilize o comando: </h3>
+<h3> Para executar todos os containers o docker compose utilize o comando: </h3>
     
     docker-compose -f docker-compose.yml up 
 
@@ -13,6 +13,8 @@ Ferramenta web para gerenciar seu Docker. </br>
 https://www.portainer.io/ </br>
 http://localhost:9000 </br>
 
+    docker-compose -f docker-compose.yml up portainer
+
 ============================================================================
 
 <h1> MongoDB </h1>
@@ -22,6 +24,8 @@ Porta:27017 </br>
 Usuário: root </br>
 Senha: root </br>
 
+    docker-compose -f docker-compose.yml up mongo
+
 ============================================================================
 
 <h1> Mongo Express </h1>
@@ -29,6 +33,8 @@ Ferramenta Web para utilizar o Banco MongoDB. </br>
 http://localhost:8081 </br>
 Usuário: root </br>
 Senha: root </br>
+
+    docker-compose -f docker-compose.yml up mongo-express
 
 ============================================================================
 
@@ -39,12 +45,16 @@ Porta:7687 </br>
 Usuário: neo4j </br>
 Senha: neo4j </br>
 
+    docker-compose -f docker-compose.yml up neo4j
+
 ============================================================================
 
 <h1> Redis </h1>
 Banco de dados chave valor (NoSql). </br>
 https://redis.io/ </br>
 porta:6379 </br>
+
+    docker-compose -f docker-compose.yml up redis
 
 ============================================================================
 
@@ -53,6 +63,8 @@ Banco de dados colunar (NoSql). </br>
 http://cassandra.apache.org/ </br>
 porta:7000 </br>
 
+    docker-compose -f docker-compose.yml up cassandra
+
 ============================================================================
 
 <h1> Jupyter Notebook (All Spark)  </h1>
@@ -60,6 +72,8 @@ Jupyter Notebook com todos as iinguagens para programar com spark. </br>
 Python 3 / Scala / R </br>
 https://github.com/jupyter/docker-stacks </br>
 http://localhost:8888 </br>
+
+    docker-compose -f docker-compose.yml up jupyter_all_spark
 
 ============================================================================
 
@@ -70,6 +84,8 @@ Porta original é 8787, porem foi trocada pois já estava em uso, para modificar
 http://localhost:8788 </br>
 Usuário: rstudio </br>
 Senha: root </br>
+
+    docker-compose -f docker-compose.yml up rstudio
 
 ============================================================================
 
@@ -99,5 +115,16 @@ http://localhost:60030 # HBase Region </br>
 porta: 9090  # HBase Thrift </br>
 porta: 8080  # HBase Rest </br>
 porta: 7077  # Spark Master</br>
+
+    docker-compose -f docker-compose.yml up hadoop_cloudera
+
+============================================================================
+
+<h1> Apache Airflow  </h1>
+Workflow para agendar e orquestrar ETL dentre outros </br>
+https://github.com/puckel/docker-airflow </br>
+http://localhost:8089 </br>
+
+    docker-compose -f docker-compose.yml up airflow
 
 ============================================================================
