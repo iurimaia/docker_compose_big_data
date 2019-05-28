@@ -128,3 +128,14 @@ http://localhost:8089 </br>
     docker-compose -f docker-compose.yml up airflow
 
 ============================================================================
+
+============================================================================
+
+<h1> Apache NiFI  </h1>
+Ferramenta para workflow e ETL </br>
+https://github.com/apache/nifi </br>
+http://localhost:9090 </br>
+
+    docker-compose -f docker-compose.yml up nifi
+
+============================================================================
